@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "910721358842",
+    "project_id": "taska-585ee",
+    "storage_bucket": "taska-585ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910721358842:android:98dbb5284375388cc16243",
+        "android_client_info": {
+          "package_name": "com.ajmal.taska"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "910721358842-lvg5lul7ovemid7e730andf54pe0hlie.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ajmal.taska",
+            "certificate_hash": "017e22a46ffe47d2679d693c13634e03cc5e045a"
+          }
+        },
+        {
+          "client_id": "910721358842-i987ire78u3cbvnv3a9db59fq9luie8l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClZScpg3auQPszcdvaEH9-fquSqv3yhWo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "910721358842-i987ire78u3cbvnv3a9db59fq9luie8l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
