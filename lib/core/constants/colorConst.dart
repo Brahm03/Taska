@@ -8,5 +8,6 @@ class ColorConst {
   static const Color grey = Color(0XFFfafafa);
   static const Color darkgrey = Color(0XFFb7b7b7);
   static const Color black = Colors.black;
-  
+  static const Color white = Colors.white;
+  static const CupertinoDynamicColor red = CupertinoColors.systemRed;
 }

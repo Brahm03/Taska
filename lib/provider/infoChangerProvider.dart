@@ -26,7 +26,7 @@ class infoChangerProvider extends ChangeNotifier {
     index++;
     notifyListeners();
     if (index == 3) {
-      Navigator.pushNamedAndRemoveUntil(context, '/signup', (route) => false);
+      Navigator.pushNamedAndRemoveUntil(context, '/register', (route) => false);
     }
   }
 }

@@ -22,8 +22,6 @@ class SignupPage extends StatelessWidget {
   TextEditingController passwordController = TextEditingController();
   final _key = GlobalKey<FormState>();
 
-  
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,6 +51,7 @@ class SignupPage extends StatelessWidget {
                   children: [
                     FadeInLeftBig(
                       child: MytextFormField(
+                          maxlength: 25,
                           controller: emailController,
                           decoration: AllStyles.textformFieldStyle(
                               hinttext: 'Email', icon: IconConst.email),
@@ -63,6 +62,7 @@ class SignupPage extends StatelessWidget {
                     ),
                     FadeInRightBig(
                       child: MytextFormField(
+                          maxlength: 8,
                           obsecured:
                               context.watch<HidePasswordProvider>().ishidden,
                           controller: passwordController,
@@ -85,7 +85,23 @@ class SignupPage extends StatelessWidget {
               Padding(
                   padding: EdgeInsets.only(
                       left: MediaQuery.of(context).size.width * 0.250),
-                  child: MycheckBox()),
+                  child: Row(
+                    children: [
+                      MycheckBox(
+                        onchanged: (v) {
+                          context.read<CheckBoxprovider>().onChanged();
+                        },
+                        value: context.watch<CheckBoxprovider>().ckecked,
+                      ),
+                      const Text(
+                        'Remember me',
+                        style: TextStyle(
+                            fontFamily: 'myfont',
+                            fontSize: FontSizeconst.small,
+                            fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  )),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.010,
               ),
@@ -154,15 +170,21 @@ class SignupPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        FadeInDown(child: ConnectWIth(ontap: () {}, icon: IconConst.facebook)),
+                        FadeInDown(
+                            child: ConnectWIth(
+                                ontap: () {}, icon: IconConst.facebook)),
                         FadeInUp(
                           child: ConnectWIth(
                               ontap: () {
-                                context.read<SignINprovider>().signInWithGoogle();
+                                context
+                                    .read<SignINprovider>()
+                                    .signInWithGoogle();
                               },
                               icon: IconConst.google),
                         ),
-                        FadeInDown(child: ConnectWIth(ontap: () {}, icon: IconConst.apple)),
+                        FadeInDown(
+                            child: ConnectWIth(
+                                ontap: () {}, icon: IconConst.apple)),
                       ],
                     ),
                   ),

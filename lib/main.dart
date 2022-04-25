@@ -1,11 +1,13 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
 import 'package:taska/core/components/app_theme.dart';
 import 'package:taska/provider/checkBoxprovider.dart';
 import 'package:taska/provider/editProfileImage.dart';
 import 'package:taska/provider/hidePasswordProvider.dart';
 import 'package:taska/provider/infoChangerProvider.dart';
+import 'package:taska/provider/seeAllProvider.dart';
 import 'package:taska/provider/signINprovider.dart';
 import 'package:taska/provider/signUPprovider.dart';
 import 'package:taska/provider/writeUserInfoProvider.dart';
@@ -13,6 +15,8 @@ import 'package:taska/routes/myRoutes.dart';
 import 'package:taska/service/FirebaseService.dart';
 
 void main() async {
+  debugRepaintRainbowEnabled:
+  true;
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(MultiProvider(
@@ -22,8 +26,9 @@ void main() async {
       ChangeNotifierProvider(create: (_) => SignUpProvider()),
       ChangeNotifierProvider(create: (_) => HidePasswordProvider()),
       ChangeNotifierProvider(create: (_) => SignINprovider()),
-      ChangeNotifierProvider(create: (_) => EditProfileImage()),
+      ChangeNotifierProvider(create: (_) => MyImageprovider()),
       ChangeNotifierProvider(create: (_) => UserInfoProvider()),
+      ChangeNotifierProvider(create: (_) => SeeAllProvider()),
     ],
     child: MyApp(),
   ));
@@ -40,7 +45,8 @@ class MyApp extends StatelessWidget {
       title: 'Taska',
       theme: Apptheme.light,
       onGenerateRoute: _myRoute.onGenerateRoute,
-      initialRoute:  FirebaseService.auth.currentUser != null ? '/main' : '/splash',
+      initialRoute:
+          FirebaseService.auth.currentUser != null ? '/main' : '/splash',
     );
   }
 }

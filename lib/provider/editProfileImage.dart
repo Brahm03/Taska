@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 
-class EditProfileImage extends ChangeNotifier {
+class MyImageprovider extends ChangeNotifier {
   XFile? image;
 
   Future pickImage() async {
@@ -18,7 +18,7 @@ class EditProfileImage extends ChangeNotifier {
         return image;
       }
     } on PlatformException catch (e) {
-      debugPrint('Failed to pick image: $e');
+      debugPrint('Failed to pick image: ${e.message}');
     }
   }
 }

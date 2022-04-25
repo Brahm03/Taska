@@ -9,8 +9,6 @@ class AllStyles {
   static InputDecoration textformFieldStyle({Widget preficIcon = const SizedBox(),required String hinttext,required Widget icon}) {
     return InputDecoration(
       floatingLabelAlignment: FloatingLabelAlignment.start,
-      enabledBorder: InputBorder.none,
-      focusedBorder: InputBorder.none,
       focusColor: ColorConst.kPrimaryColor,
       contentPadding: PMconst.medium,
       suffixIcon: Padding(padding: const EdgeInsets.all(10),child: preficIcon),

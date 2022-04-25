@@ -7,6 +7,7 @@ class Apptheme {
     primaryColor: ColorConst.kPrimaryColor
   );
   static get light => ThemeData(
+    scaffoldBackgroundColor: ColorConst.grey,
     brightness: Brightness.light,
     primaryColor: ColorConst.kPrimaryColor
   );

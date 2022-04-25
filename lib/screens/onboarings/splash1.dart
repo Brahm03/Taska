@@ -88,7 +88,7 @@ class SplashOne extends StatelessWidget {
                         width: MediaQuery.of(context).size.width * 0.8,
                         onPressed: () {
                           Navigator.pushNamedAndRemoveUntil(
-                              context, '/signup', (route) => false);
+                              context, '/register', (route) => false);
                         },
                         textcolor: ColorConst.kPrimaryColor,
                         buttonColor: ColorConst.blue,

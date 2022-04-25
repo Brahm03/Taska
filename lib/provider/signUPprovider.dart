@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:taska/core/constants/colorConst.dart';
+import 'package:taska/core/constants/radiusConst.dart';
 import 'package:taska/service/FirebaseService.dart';
 import 'package:taska/widgets/mysnackbar.dart';
 
@@ -10,6 +12,10 @@ class SignUpProvider extends ChangeNotifier {
       required String email,
       required String password}) async {
     try {
+      showDialog(context: context, builder: (_)=> Center(
+            child: SizedBox(height: MediaQuery.of(context).size.height * 0.2,child: LottieBuilder.asset('assets/icons/load.json')),
+          ),
+      );
       await FirebaseService.auth
           .createUserWithEmailAndPassword(email: email, password: password);
       Navigator.pushNamedAndRemoveUntil(context, '/profile', (route) => false);
